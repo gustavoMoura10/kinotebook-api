@@ -1,31 +1,25 @@
 import { Injectable } from '@nestjs/common';
 
+
 @Injectable()
 export class PersonsService {
-  private persons = [];
-  async getPersons() {
-    try {
-      return this.persons;
-    } catch (error) {
-      console.log(error);
-    }
+  create(createPersonDto) {
+    return 'This action adds a new person';
   }
-  async createPerson(person) {
-    this.persons.push(person);
-    return person;
+
+  findAll() {
+    return `This action returns all persons`;
   }
-  async updatePerson(id, person) {
-    const index = this.persons.findIndex((u) => u.id === id);
-    if (index >= 0) {
-      this.persons[index] = person;
-      return person;
-    }
+
+  findOne(id: number) {
+    return `This action returns a #${id} person`;
   }
-  async deletePerson(id) {
-    const index = this.persons.findIndex((u) => u.id === id);
-    if (index >= 0) {
-      this.persons.splice(index, 1);
-      return null;
-    }
+
+  update(id: number, updatePersonDto) {
+    return `This action updates a #${id} person`;
+  }
+
+  remove(id: number) {
+    return `This action removes a #${id} person`;
   }
 }

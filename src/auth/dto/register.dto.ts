@@ -8,6 +8,7 @@ import {
   MinLength,
 } from 'class-validator';
 import { IsEmailUnique } from '../validation/email.validator';
+import { IsMatchPassword } from '../validation/match.password.validator';
 export default class RegisterDto {
   @IsString()
   @IsEmail()
@@ -26,6 +27,7 @@ export default class RegisterDto {
   @IsString()
   @MinLength(8)
   @MaxLength(20)
+  @IsMatchPassword('password', { message: 'Passwords do not match' })
   confirmPassword: string;
 
   @IsString()
