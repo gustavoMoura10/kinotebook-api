@@ -10,6 +10,7 @@ export const dataSourceOptions: DataSourceOptions = {
   database: process.env['DATABASE_NAME'],
   entities: [__dirname + '/../../**/*.entity.{js,ts}'],
   migrations: [__dirname + '/migrations/*.{js,ts}'],
+  
   logging: true
 };
 const AppDataSource = new DataSource(dataSourceOptions);
