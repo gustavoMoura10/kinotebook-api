@@ -6,7 +6,7 @@ services:
     container_name: postgres_kinotebook
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: Senha@123
+      POSTGRES_PASSWORD: 
       POSTGRES_DB: kinotebook
     ports:
       - "5432:5432"
